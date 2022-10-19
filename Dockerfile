@@ -29,10 +29,14 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
-# Copy files: 
+# Copy files:
 # COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
+
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+RUN sudo apt-get install -y nodejs
+RUN corepack enable
 
 # Port
 ENV PORT=8080
